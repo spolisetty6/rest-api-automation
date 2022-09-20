@@ -15,8 +15,7 @@ public class RestHelper {
     private static String BASE_URL = "https://restful-booker.herokuapp.com";
     Response response;
 
-
-
+    /* Method to login to the portal using valid credentials and extract the token from the response received */
     public String getAuthToken(String requestBody) {
         LOGGER.info("log in to get auth token");
         response =  given().contentType("application/x-www-form-urlencoded")
@@ -32,6 +31,7 @@ public class RestHelper {
        return response.jsonPath().get("token");
     }
 
+    /* Method to create the booking */
     public String createBooking(String requestBody) {
         response = given().contentType(ContentType.JSON)
                 .when()
@@ -44,6 +44,8 @@ public class RestHelper {
 
         return response.jsonPath().get("bookingid").toString();
     }
+
+    /* Method to update existing booking using the OAUTH token received when logged in to the portal*/
     public Response updateBooking(String requestBody, String bookingId, String oAuth_TOKEN) {
         response = given().contentType(ContentType.JSON)
                 .header("Cookie",  "token=" + oAuth_TOKEN)
@@ -56,6 +58,7 @@ public class RestHelper {
 
     }
 
+    /* Method to partially update existing booking using the OAUTH token received when logged in to the portal*/
     public Response partialUpdateBooking(String requestBody, String bookingId, String oAuth_TOKEN) {
 
         response = given().contentType(ContentType.JSON)
@@ -68,6 +71,7 @@ public class RestHelper {
         return response;
     }
 
+    /* Method to delete existing booking using the OAUTH token received when logged in to the portal*/
     public Response deleteBooking(String bookingId, String oAuth_TOKEN) {
         response = given().contentType(ContentType.JSON)
                 .header("Cookie", "token=" + oAuth_TOKEN)

@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class JsonHelper {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonHelper.class);
         public String loginRequestBody(String username, String password){
             return Json.createObjectBuilder()
@@ -42,6 +41,7 @@ public class JsonHelper {
         return  requestBody.replace("Breakfast", "Lunch");
     }
 
+    /* Generate a random text string. This string will then be prefixed with either "FirstName" or "Lastname" according to the method call */
     private String getRandomName(){
        Random random =  new Random();
 
@@ -50,13 +50,13 @@ public class JsonHelper {
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();
     }
-
+    /* Generate a date that is 3 days from now (i.e. Current date + 3 days) */
     private String getCheckinDate(){
         LocalDate date = LocalDate.now();
        return date.plusDays(3).toString();
 
     }
-
+    /* Generate a date that is 8 days from now (i.e. Current date + 8 days). As a result the booking duration will be 5 days. */
     private String getCheckoutDate(){
         LocalDate date = LocalDate.now();
         return date.plusDays(8).toString();

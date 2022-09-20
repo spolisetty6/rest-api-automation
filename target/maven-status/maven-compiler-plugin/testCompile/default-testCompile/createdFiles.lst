@@ -1,0 +1,4 @@
+booking\app\support\AssertHelper.class
+booking\app\support\JsonHelper.class
+TestHotelBookingAPI.class
+booking\app\support\RestHelper.class

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="TestHotelBookingAPi" time="8.89" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="TestHotelBookingAPI" time="8.182" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.2.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +62,7 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestHotelBookingAPi" name="createAndPartialUpdateBookingTest" time="5.149"/>
-  <testcase classname="TestHotelBookingAPi" name="createAndUpdateBookingTest" time="1.856"/>
-  <testcase classname="TestHotelBookingAPi" name="createAndDeleteBooking" time="1.885"/>
+  <testcase classname="TestHotelBookingAPI" name="createAndPartialUpdateBookingTest" time="5.023"/>
+  <testcase classname="TestHotelBookingAPI" name="createAndUpdateBookingTest" time="1.545"/>
+  <testcase classname="TestHotelBookingAPI" name="createAndDeleteBooking" time="1.614"/>
 </testsuite>
